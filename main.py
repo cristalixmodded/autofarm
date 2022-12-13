@@ -7,9 +7,10 @@ import configparser
 import pyautogui
 
 def farm(warp, slot, time_range, time_sleep):
-    pyautogui.press('t')
-    pyautogui.write("/warp " + warp, interval=0.25)
-    pyautogui.press('enter')
+    fpr i in range(2):
+        pyautogui.press('t')
+        pyautogui.write("/warp " + warp, interval=0.25)
+        pyautogui.press('enter')
     QTest.qWait(4000)
    
     pyautogui.press(slot)
