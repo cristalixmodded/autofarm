@@ -7,11 +7,11 @@ import configparser
 import pyautogui
 
 def farm(warp, slot, time_range, time_sleep):
-    fpr i in range(2):
+    for i in range(2):
         pyautogui.press('t')
         pyautogui.write("/warp " + warp, interval=0.25)
         pyautogui.press('enter')
-    QTest.qWait(4000)
+        QTest.qWait(4000)
    
     pyautogui.press(slot)
     for _ in range(time_range):
@@ -54,7 +54,7 @@ class Ui(QMainWindow):
             farm(self.mobsWarp.text(), self.mobsSlot.text(), 10, 20000) 
             
             pyautogui.press('t')
-            pyautogui.write("/home, interval=0.25)
+            pyautogui.write("/home", interval=0.25)
             pyautogui.press('enter')
                             
             delay = self.delay.text()
