@@ -52,7 +52,11 @@ class Ui(QMainWindow):
         while True:  
             farm(self.oresWarp.text(), self.oresSlot.text(), 5, 3000)
             farm(self.mobsWarp.text(), self.mobsSlot.text(), 10, 20000) 
-
+            
+            pyautogui.press('t')
+            pyautogui.write("/home, interval=0.25)
+            pyautogui.press('enter')
+                            
             delay = self.delay.text()
             delay = int(delay) * 60 * 1000 / 100
             delay = round(delay)
