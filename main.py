@@ -7,7 +7,6 @@ import configparser
 import pyautogui
 
 def farm(warp, slot, time_range, time_sleep):
-    pyautogui.press('ESC')
     pyautogui.press('t')
     pyautogui.write("/warp " + warp, interval=0.25)
     pyautogui.press('enter')
