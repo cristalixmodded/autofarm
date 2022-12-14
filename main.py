@@ -65,7 +65,7 @@ class Ui(QMainWindow):
             self.timer.timeout.connect(self.progress_bar)
             self.timer.start(delay)   
             
-            delat = self.delay.text()
+            delay = self.delay.text()
             delay = int(delay) * 60 * 1000
             QTest.qWait(delay)
 
