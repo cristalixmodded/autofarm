@@ -9,7 +9,7 @@ import pyautogui
 def farm(warp, slot, time_range, time_sleep):
     for i in range(2):
         pyautogui.press('t')
-        pyautogui.write("/warp " + warp, interval=0.25)
+        pyautogui.typewrite("/warp " + warp, interval=0.25)
         pyautogui.press('enter')
         QTest.qWait(4000)
    
@@ -48,25 +48,26 @@ class Ui(QMainWindow):
         
     def start_button(self):      
         self.startButton.setEnabled(False)
+        self.startButton.setText('working...')
         QTest.qWait(10000)
         while True:  
+            text_delay = self.delay.text()
+            delay = int(text_delay) * 60 * 1000
+            
+            progress_bar_delay = delay / 100
+            progress_bar_delay = round(progress_bar_delay)
+            
+            self.timer = QTimer()
+            self.timer.timeout.connect(self.progress_bar)
+            self.timer.start(progress_bar_delay)
+            
             farm(self.oresWarp.text(), self.oresSlot.text(), 5, 3000)
             farm(self.mobsWarp.text(), self.mobsSlot.text(), 10, 20000) 
             
             pyautogui.press('t')
-            pyautogui.write("/home", interval=0.25)
-            pyautogui.press('enter')
-                            
-            delay = self.delay.text()
-            delay = int(delay) * 60 * 1000 / 100
-            delay = round(delay)
-            
-            self.timer = QTimer()
-            self.timer.timeout.connect(self.progress_bar)
-            self.timer.start(delay)   
-            
-            delay = self.delay.text()
-            delay = int(delay) * 60 * 1000
+            pyautogui.typewrite('/home', interval=0.25)
+            pyautogui.press('enter')   
+        
             QTest.qWait(delay)
 
     def progress_bar(self):
