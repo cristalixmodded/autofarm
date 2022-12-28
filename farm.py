@@ -8,7 +8,7 @@ ores_warp = config.get('Config', 'ores_warp')
 ores_slot = config.get('Config', 'ores_slot')
 mobs_warp = config.get('Config', 'mobs_warp')
 mobs_slot = config.get('Config', 'mobs_slot')
-delay = int(config.get('Config', 'delay')) * 60
+delay = config.get('Config', 'delay') * 60
 
 def farm(warp, slot, click_range, time_sleep):
     for _ in range(2):
