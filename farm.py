@@ -31,5 +31,3 @@ def start_farm():
         farm('/home', '5', 1, 1)
         
         time.sleep(delay)
-        
-start_farm()  
