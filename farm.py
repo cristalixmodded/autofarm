@@ -22,8 +22,9 @@ def farm(warp, slot, click_range, time_sleep):
         time.sleep(time_sleep)
         
 def start_farm():
-    time.sleep(10)
+    while True:
+        time.sleep(10)
     
-    farm(ores_warp, ores_slot, 6, 5)
-    farm(mobs_warp, mobs_slot, 12, 10)
-    time.sleep(delay)
+        farm(ores_warp, ores_slot, 6, 5)
+        farm(mobs_warp, mobs_slot, 12, 10)
+        time.sleep(delay)
