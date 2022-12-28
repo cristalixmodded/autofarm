@@ -28,4 +28,6 @@ def start_farm():
     
         farm(ores_warp, ores_slot, 6, 5)
         farm(mobs_warp, mobs_slot, 12, 10)
+        farm('/home', 5, 1, 1)
+        
         time.sleep(delay)
