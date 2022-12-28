@@ -15,6 +15,7 @@ def farm(warp, slot, click_range, time_sleep):
         pyautogui.press('t')
         pyautogui.typewrite("/warp " + warp, interval=0.25)
         pyautogui.press('enter')
+        time.sleep(4)
    
     pyautogui.press(slot)
     for _ in range(click_range):
